@@ -12,6 +12,14 @@ const theme = createMuiTheme({
       'Arial',
       'sans-serif'
     ].join(','),
+  },
+  palette: {
+    primary: {
+      main: '#003270'
+    },
+    secondary: {
+      main: '#ef7d00',
+    }
   }
 });
 

@@ -1,14 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Box, Container, Divider, Grid, makeStyles, Paper, Typography } from "@material-ui/core";
+import { Box, Container, Grid, makeStyles, Paper, Typography } from "@material-ui/core";
 import { HomeProps } from "./types";
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import { indigo } from '@material-ui/core/colors';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
 
     root: {
         flexGrow: 1,
+    },
+    header: {
+        background: theme.palette.primary.main,
+        color: 'white',
+        padding: '5px 0'
     },
     main: {
         marginTop: '65px'
@@ -16,9 +20,8 @@ const useStyles = makeStyles((theme) => ({
     paper: {
         padding: theme.spacing(2),
         textAlign: 'center',
-        color: indigo.A400,
         display: 'flex',
-        backgroundColor: indigo.A400
+        backgroundColor: theme.palette.primary.main
     },
     categoryTitle: {
         flex: 1,
@@ -27,8 +30,8 @@ const useStyles = makeStyles((theme) => ({
     },
     icon: {
         borderRadius: '50%',
-        backgroundColor: 'white',
-        color: indigo.A400
+        backgroundColor: theme.palette.secondary.main,
+        color: 'white'
     }
 
 }));
@@ -38,75 +41,40 @@ const Home: React.FC<HomeProps> = () => {
 
     return (
         <div>
-            <Box bgcolor={indigo.A400} color="white">
+            <Box className={classes.header}>
                 <Container>
                     <Typography variant="h3">
-                        Home
+                        Categories
                     </Typography>
                 </Container>
             </Box>
             <Box p={10}>
                 <Grid container spacing={3}>
-                    <Grid item xs={6}>
-                        <Paper className={classes.paper}>
-                            <Typography className={classes.categoryTitle}>Categoria</Typography>
-                            <ChevronRightIcon className={classes.icon} color="primary"></ChevronRightIcon>
-                        </Paper>
+                    <Grid item xs={12} sm={6} md={4} >
+                        <Link to="/question">
+                            <Paper className={classes.paper}>
+                                <Typography className={classes.categoryTitle}>Categoria</Typography>
+                                <ChevronRightIcon className={classes.icon} color="primary"></ChevronRightIcon>
+                            </Paper>
+                        </Link>
                     </Grid>
-                    <Grid item xs={6}>
-                        <Paper className={classes.paper}>
-                            <Typography className={classes.categoryTitle}>Categoria</Typography>
-                            <ChevronRightIcon className={classes.icon} color="primary"></ChevronRightIcon>
-                        </Paper>
+                    <Grid item xs={12} sm={6} md={4}>
+                        <Link to="/question">
+                            <Paper className={classes.paper}>
+                                <Typography className={classes.categoryTitle}>Categoria</Typography>
+                                <ChevronRightIcon className={classes.icon} color="primary"></ChevronRightIcon>
+                            </Paper>
+                        </Link>
                     </Grid>
-                    <Grid item xs={6}>
-                        <Paper className={classes.paper}>
-                            <Typography className={classes.categoryTitle}>Categoria</Typography>
-                            <ChevronRightIcon className={classes.icon} color="primary"></ChevronRightIcon>
-                        </Paper>
+                    <Grid item xs={12} sm={6} md={4}>
+                        <Link to="/question">
+                            <Paper className={classes.paper}>
+                                <Typography className={classes.categoryTitle}>Categoria</Typography>
+                                <ChevronRightIcon className={classes.icon} color="primary"></ChevronRightIcon>
+                            </Paper>
+                        </Link>
                     </Grid>
-                    <Grid item xs={6}>
-                        <Paper className={classes.paper}>
-                            <Typography className={classes.categoryTitle}>Categoria</Typography>
-                            <ChevronRightIcon className={classes.icon} color="primary"></ChevronRightIcon>
-                        </Paper>
-                    </Grid>
-                    <Grid item xs={6}>
-                        <Paper className={classes.paper}>
-                            <Typography className={classes.categoryTitle}>Categoria</Typography>
-                            <ChevronRightIcon className={classes.icon} color="primary"></ChevronRightIcon>
-                        </Paper>
-                    </Grid>
-                    <Grid item xs={6}>
-                        <Paper className={classes.paper}>
-                            <Typography className={classes.categoryTitle}>Categoria</Typography>
-                            <ChevronRightIcon className={classes.icon} color="primary"></ChevronRightIcon>
-                        </Paper>
-                    </Grid>
-                    <Grid item xs={6}>
-                        <Paper className={classes.paper}>
-                            <Typography className={classes.categoryTitle}>Categoria</Typography>
-                            <ChevronRightIcon className={classes.icon} color="primary"></ChevronRightIcon>
-                        </Paper>
-                    </Grid>
-                    <Grid item xs={6}>
-                        <Paper className={classes.paper}>
-                            <Typography className={classes.categoryTitle}>Categoria</Typography>
-                            <ChevronRightIcon className={classes.icon} color="primary"></ChevronRightIcon>
-                        </Paper>
-                    </Grid>
-                    <Grid item xs={6}>
-                        <Paper className={classes.paper}>
-                            <Typography className={classes.categoryTitle}>Categoria</Typography>
-                            <ChevronRightIcon className={classes.icon} color="primary"></ChevronRightIcon>
-                        </Paper>
-                    </Grid>
-                    <Grid item xs={6}>
-                        <Paper className={classes.paper}>
-                            <Typography className={classes.categoryTitle}>Categoria</Typography>
-                            <ChevronRightIcon className={classes.icon} color="primary"></ChevronRightIcon>
-                        </Paper>
-                    </Grid>
+                    
                 </Grid>
             </Box>
         </div>
