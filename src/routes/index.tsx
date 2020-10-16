@@ -2,9 +2,9 @@ import { createBrowserHistory } from "history";
 import React, { Suspense } from "react";
 import { Route, Router, Switch } from "react-router-dom";
 import { Loading } from "../components";
-import Question from "../pages/question";
 
-const Home = React.lazy(() => import("../pages/home"));
+const Categories = React.lazy(() => import("../pages/categories"));
+const Question = React.lazy(() => import("../pages/question"));
 
 const Routes = () => {
     const history = createBrowserHistory();
@@ -14,7 +14,7 @@ const Routes = () => {
             <Router history={history}>
                 <Switch>
                     <Route path="/" exact>
-                        <Home/>
+                        <Categories/>
                     </Route>
                     <Route path="/question" exact>
                         <Question/>
